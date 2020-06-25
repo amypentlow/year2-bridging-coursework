@@ -7,14 +7,12 @@
 			<h1><a href="/">Amys Blog</a></h1> 
 		</div>
 		
-		<div>
-			<h2><a href="">My first post</a></h2>
-			<p>A post reflecting on what you’ve enjoyed studying this year.</p>
-		</div>
-		
-		<div>
-		<h2><a href="">My second post</a></h2>
-		<p>A post looking to the future that discusses what you’re looking forward to learning about in the upcoming academic year.</p> 
-		</div>
-	</body> 
-</html>
+		{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p> 
+				<h2><a href="">{{ post.title }}</a></h2>
+				 <p>{{ post.text|linebreaksbr }}</p>
+			</div>
+		{% endfor %}    
+	</body>
+ </html>
